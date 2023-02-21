@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    <style>
+        body{
+            font-family: Calibri;
+            font-size: small;
+        }
+        #geral{
+            width: 307px;
+        }
+        #corpo{
+            border:1px solid #000000;
+        }
+        #p-sex{
+            margin: 2%;
+        }
+        /* Formatação das divs de texto */
+        .dias {
+            display:inline-block;
+            text-align: center;
+            border:1px solid #000000;
+            font-size:small;
+            border-bottom: none;
+            border-top-right-radius: 5px;
+            width: 12%
+        }
+        .feriado{
+            display:inline-block;
+            margin:0px;
+            color:#FF0000;
+        }
+        .dias:hover{
+            background-color: crimson;
+            color: #FFFFFF;
+        }
+        .semp{
+            display:inline-block;
+            margin:0px;
+            color:#2552b4;
+        }
+        .teste{
+            display:inline-block;
+            margin:0px;
+            color:#00ca98;
+        }
+        .normal{
+            display:inline-block;
+            margin:0px;
+        }
+    </style>
+    <div id="geral">
+        <div id="cabeca">
+            <div id="c-seg" class="dias" onclick="fseg()">Seg</div>
+            <div id="c-ter" class="dias" onclick="fter()">Ter</div>
+            <div id="c-qua" class="dias" onclick="fqua()">Qua</div>
+            <div id="c-qui" class="dias" onclick="fqui()">Qui</div>
+            <div id="c-sex" class="dias" onclick="fsex()">Sex</div>
+            <div id="c-sab" class="dias" onclick="fsab()">Sáb</div>
+            <div id="c-dom" class="dias" onclick="fdom()">Dom</div>
+        </div>
+        <div id="corpo">
+            <p id="p-sex">
+                Selecione um dia
+            </p>
+            
+        </div>
+    </div>  
+    <script>
+        /* Entre strongs a data - O que acontece na data
+        <strong>DATA</strong> - <p class='normal'>O que acontece nesse dia</p>
+
+        Usar os parâmetros de class:
+        - 'normal': dias normais de aula (sem alterações)
+        - 'teste': dia que houver testes (texto azul)
+        - 'feriado': folga/feriado (texto veremlho)
+        - 'semp': semana de provas (texto verde-água)
+        USAR SEMPRE AS ASPAS SIMPLES
+        */
+        function fseg(){
+            window.document.getElementById("p-sex").innerHTML = "<strong>20/02</strong> - <p class='feriado'>Segunda-feira de Carnaval</p>"
+        }
+        function fter(){
+            window.document.getElementById("p-sex").innerHTML = "<strong>21/02</strong> - <p class='feriado'>Terça-feira de Carnaval</p>"
+        }
+        function fqua(){
+            window.document.getElementById("p-sex").innerHTML = "<strong>22/02</strong> - <p class='feriado'>Quarta-feira de Cinzas</p>"
+        }
+        function fqui(){
+            window.document.getElementById("p-sex").innerHTML = "<strong>23/02</strong> - <p class='normal'></p>"
+        }
+        function fsex(){
+            window.document.getElementById("p-sex").innerHTML = "<strong>24/02</strong> - <p class='normal'>Laboratório grupo <strong>A</strong></p>"
+        }
+        function fsab(){
+            window.document.getElementById("p-sex").innerHTML = "<strong>25/02</strong> - <p class='feriado'>Sábado</p> <br> Estude para o Teste de Processos :)"
+        }
+        function fdom(){
+            window.document.getElementById("p-sex").innerHTML = "<strong>26/02</strong> - <p class='feriado'>Domingo</p>"
+        }
+    </script>
+
+</body>
+</html>
